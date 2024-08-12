@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  color: #222;
+}
+
+.wrapper {
+  padding: 4rem 2rem;
+  display: grid;
+  justify-items: center;
+  max-width: 50rem;
+}
+
+h1 {
+  margin-bottom: 1.25em;
+  max-width: 25ch;
+  font-size: clamp(1.2rem, 0.5rem + 5vw, 4rem);
+  font-family: "Bebas Neue", "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  background-color: #222;
+  
+}
+
+.upload-container {
+  text-align: center;
+  font-size: clamp(0.5rem, 0.1rem + 3vw, 2rem);
+  display: grid;
+  justify-content: center;
+  position: absolute;
+  top: 57.5%;
+  left: 24.7%;
+  width: 43.5%;
+  min-height: 42%;
+  transform: rotate(0deg) perspective(51px) rotateX(1deg) rotateY(0.5deg)
+    skew(-17deg, 0deg);
+  background-color: #222;
+  color: #fff;
+  cursor: pointer;
+  height: 0;
+  overflow: hidden;
+}
+
+.upload-container > * {
+  grid-column: 1;
+  grid-row: 1;
+  cursor: pointer;
+}
+
+.upload-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-label span {
+  max-width: 6.5ch;
+}
+
+input {
+  opacity: 0;
+  align-self: center;
+}
+
+input:focus + .upload-label span {
+  outline: 2px dashed currentColor;
+}
+
+img {
+  z-index: 99;
+}
+
+.canvases,
+.canvases > *,
+img {
+  grid-column: 1;
+  grid-row: 1;
+  pointer-events: none;
+}
+
+img,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+.canvases {
+  display: grid;
+  pointer-events: none;
+}
+
+#canvas-album {
+  display: none;
+}
+
+#canvas-chandler {
+  position: relative;
+  z-index: 99;
+}
+
+a[download] {
+  margin-top: 2rem;
+  color: inherit;
+  text-decoration: none;
+  background: #222;
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 17px;
+}
+
+a:focus-visible {
+  outline: 2px dashed #222;
+  outline-offset: 2px;
+}
+
+footer {
+  color: #555555;
+  font-size: 0.9em;
+}
